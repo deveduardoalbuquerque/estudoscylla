@@ -1,0 +1,70 @@
+micronaut:
+  server:
+    port:8080
+  application:
+    name: clientScylla3
+cassandra:
+  default:
+    basic:
+      contact-points:
+#        - localhost:9042
+        - 172.17.0.2:9042
+#       - scylla-sa-east-1-sa-east-1a-0.scylla:9042
+      session-keyspace: mykeyspace
+      load-balancing-policy:
+        local-datacenter: myCluster
+
+
+#cassandra:
+#  default:
+#    advanced:
+#      metadata:
+#        schema:
+#          enabled: false
+#    basic:
+#      contact-points:
+#        - "172.17.0.2:9042"
+#        - "127.0.0.2:8042"
+#      load-balancing-policy:
+#        local-datacenter: myCluster
+#
+
+#cassandra:
+#  default:
+#    advanced:
+#      metadata:
+#        schema:
+#          enabled: false
+#    basic:
+#      contact-points:
+#        - "172.17.0.2:9042"
+#      load-balancing-policy:
+#        local-datacenter: datacenter1
+#      keyspaceName: mykeyspace
+
+#cassandra:
+#  default:
+#    clusterName: myCluster
+#    contactPoints: 172.17.0.2
+#    keyspaceName: mykeyspace
+#    port: 9042
+#    maxSchemaAgreementWaitSeconds: 20
+#    ssl: true
+
+#cassandra:
+#  default:
+#    advanced:
+#      ssl-engine-factory: false
+#      metadata:
+#        schema:
+#          enabled: false
+#      auth-provider:
+#        class: PlainTextAuthProvider
+#        username: cassandra
+#        password: cassandra
+#    basic:
+#      load-balancing-policy:
+#        local-datacenter: <REDACTED>
+#      contact-points:
+#        - "<REDACTED>:9042"
+#      session-name: "<REDACTED>"
