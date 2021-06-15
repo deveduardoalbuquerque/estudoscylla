@@ -5,13 +5,10 @@ import br.com.iupp.controller.dot.ClientRequest
 import br.com.iupp.controller.dot.ClientResponse
 import br.com.iupp.service.ClientService
 import io.kotest.core.spec.style.AnnotationSpec
-import io.kotest.matchers.collections.shouldBeIn
 import io.kotest.matchers.shouldBe
-import io.micronaut.http.HttpResponse
 import io.micronaut.test.extensions.kotest.annotation.MicronautTest
 import io.mockk.every
 import io.mockk.mockk
-import io.netty.handler.codec.http.HttpResponseStatus.CREATED
 import java.util.*
 
 

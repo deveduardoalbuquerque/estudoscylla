@@ -11,6 +11,7 @@ interface ClientRepository {
 
     fun repSaveClient(clienteEntity: ClientEntity):ClientEntity
     fun ListOfClient():List<ClientResponse>
-    fun findClienteById(uuid:UUID):ClientResponse
+    fun findClienteById(uuid:UUID):ClientResponse?
+    fun deleteClienteById(uuid:UUID)
 
 }

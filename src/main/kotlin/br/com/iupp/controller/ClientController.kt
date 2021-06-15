@@ -24,8 +24,18 @@ class ClientController(val service: ClientService) {
         return service.listClient()
     }
     @Get("/{uuid}")
-    fun findClientByUUID(@PathVariable uuid: UUID):ClientResponse{
-        return service.findClientebyId(uuid)
+    fun findClientByUUID(@PathVariable uuid: UUID):HttpResponse<ClientResponse>{
+        val result:ClientResponse? =  service.findClientebyId(uuid)
+        if(result == null){
+            return HttpResponse.notFound()
+        }else{
+            return HttpResponse.ok(result)
+        }
+    }
+
+    @Delete("/{uuid}")
+    fun deleteClientById(@PathVariable uuid:UUID){
+        service.deleteClientById(uuid = uuid)
     }
 
 }

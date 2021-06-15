@@ -49,7 +49,7 @@ class ClientRepositoryImpl(private val cqlSession: CqlSession):ClientRepository 
         return clientResponse
     }
 
-    override fun findClienteById(uuid: UUID): ClientResponse {
+    override fun findClienteById(uuid: UUID): ClientResponse? {
 
         val result: ResultSet = cqlSession.execute(
             SimpleStatement
@@ -66,9 +66,28 @@ class ClientRepositoryImpl(private val cqlSession: CqlSession):ClientRepository 
             var email:String =row.getString("email") ?: ""
             clientResponse.add(ClientResponse(name = name,email=email,id = id))
         }
-        return clientResponse.get(0)
+        if(clientResponse.isEmpty()){
+            return null
+        } else{
+            return clientResponse.get(0)
+        }
+
     }
 
+    override fun deleteClienteById(uuid: UUID) {
+        val clientResponse = this.findClienteById(uuid)
+        if(clientResponse == null) return
+
+        cqlSession.execute(
+            SimpleStatement
+                .newInstance(
+                    "DELETE FROM mydata.client WHERE id = ?",
+                    uuid
+                )
+        )
+
+
+    }
 }
 //id para testar consultar bob
 //bc64e0a0-8b9f-4ded-9388-91192454ac0e

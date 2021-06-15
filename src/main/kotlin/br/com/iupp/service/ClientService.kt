@@ -10,7 +10,8 @@ interface ClientService {
 
     fun saveClient(clientEntity: ClientRequest):ClientResponse
     fun listClient():List<ClientResponse>
-    fun findClientebyId(clienteId: UUID):ClientResponse
+    fun findClientebyId(clienteId: UUID):ClientResponse?
+    fun deleteClientById(uuid:UUID)
 
 
 }

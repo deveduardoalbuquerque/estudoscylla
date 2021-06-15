@@ -20,7 +20,11 @@ class ClientServiceImpl(val clientRepository: ClientRepository):ClientService {
         return clientRepository.ListOfClient()
     }
 
-    override fun findClientebyId(clienteId: UUID): ClientResponse {
+    override fun findClientebyId(clienteId: UUID): ClientResponse? {
         return clientRepository.findClienteById(clienteId)
+    }
+
+    override fun deleteClientById(uuid: UUID) {
+        clientRepository.deleteClienteById(uuid)
     }
 }
