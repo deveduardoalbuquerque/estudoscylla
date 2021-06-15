@@ -1,6 +1,6 @@
 package br.com.iupp.repository
 
-import br.com.iupp.controller.dot.ClientResponse
+import br.com.iupp.controller.dto.ClientResponse
 import br.com.iupp.model.ClientEntity
 import com.datastax.oss.driver.api.core.CqlSession
 import com.datastax.oss.driver.api.core.cql.ResultSet

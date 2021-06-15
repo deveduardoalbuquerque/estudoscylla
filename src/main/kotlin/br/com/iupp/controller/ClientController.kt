@@ -1,7 +1,7 @@
 package br.com.iupp.controller
 
-import br.com.iupp.controller.dot.ClientRequest
-import br.com.iupp.controller.dot.ClientResponse
+import br.com.iupp.controller.dto.ClientRequest
+import br.com.iupp.controller.dto.ClientResponse
 
 import br.com.iupp.service.ClientService
 import io.micronaut.http.HttpResponse
@@ -25,7 +25,7 @@ class ClientController(val service: ClientService) {
     }
     @Get("/{uuid}")
     fun findClientByUUID(@PathVariable uuid: UUID):HttpResponse<ClientResponse>{
-        val result:ClientResponse? =  service.findClientebyId(uuid)
+        val result: ClientResponse? =  service.findClientebyId(uuid)
         if(result == null){
             return HttpResponse.notFound()
         }else{

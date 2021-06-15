@@ -1,4 +1,4 @@
-package br.com.iupp.controller.dot
+package br.com.iupp.controller.dto
 
 import io.micronaut.core.annotation.Introspected
 import org.hibernate.validator.constraints.br.CPF

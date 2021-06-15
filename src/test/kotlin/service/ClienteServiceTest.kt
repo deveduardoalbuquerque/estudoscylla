@@ -1,7 +1,7 @@
 package service
 
-import br.com.iupp.controller.dot.ClientRequest
-import br.com.iupp.controller.dot.ClientResponse
+import br.com.iupp.controller.dto.ClientRequest
+import br.com.iupp.controller.dto.ClientResponse
 import br.com.iupp.model.ClientEntity
 import br.com.iupp.repository.ClientRepository
 import br.com.iupp.repository.ClientRepositoryImpl

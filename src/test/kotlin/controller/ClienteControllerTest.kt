@@ -1,8 +1,8 @@
 package controller
 
 import br.com.iupp.controller.ClientController
-import br.com.iupp.controller.dot.ClientRequest
-import br.com.iupp.controller.dot.ClientResponse
+import br.com.iupp.controller.dto.ClientRequest
+import br.com.iupp.controller.dto.ClientResponse
 import br.com.iupp.service.ClientService
 import io.kotest.core.spec.style.AnnotationSpec
 import io.kotest.matchers.shouldBe
