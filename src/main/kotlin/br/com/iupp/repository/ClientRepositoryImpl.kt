@@ -35,7 +35,7 @@ class ClientRepositoryImpl(private val cqlSession: CqlSession):ClientRepository 
         val result = cqlSession.execute(
             SimpleStatement
                 .newInstance(
-                    "SELECT id, name, email,cpf FROM mydata.client"
+                    "SELECT * FROM mydata.client"
                 )
         )
 
@@ -54,7 +54,7 @@ class ClientRepositoryImpl(private val cqlSession: CqlSession):ClientRepository 
         val result: ResultSet = cqlSession.execute(
             SimpleStatement
                 .newInstance(
-                    "SELECT id,name,email FROM mydata.client WHERE id = ?",
+                    "SELECT * FROM mydata.client WHERE id = ?",
                     uuid
                 )
         )
