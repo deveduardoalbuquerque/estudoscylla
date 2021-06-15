@@ -7,14 +7,13 @@ cassandra:
   default:
     basic:
       contact-points:
-#        - localhost:9042
-        - 172.17.0.2:9042
-#       - scylla-sa-east-1-sa-east-1a-0.scylla:9042
-      session-keyspace: mykeyspace
+        - 127.0.0.1:9042
+      session-keyspace: mydata
       load-balancing-policy:
-        local-datacenter: myCluster
+        local-datacenter: datacenter1
 
-
+#  docker run --name myCluster --hostname some-scylla -d scylladb/scylla
+#  docker run --name myScylla -p 9042:9042 --hostname local -d scylladb/scylla
 #cassandra:
 #  default:
 #    advanced:
